@@ -18,10 +18,18 @@ class TodoItem extends React.Component {
         };
     }
 
+    /**
+     * Change the completed state of the item
+     * @param {SyntheticEvent} event - change event
+     */
     changeCompleted(event){
         this.props.changeCompleted(event.target.value, event.target.checked);
     }
 
+    /**
+     * Display the editable input an focus it
+     * @param {SyntheticEvent} event - click event
+     */
     edit(event){
         this.setState({
             edit : true
@@ -30,10 +38,18 @@ class TodoItem extends React.Component {
         });
     }
 
+    /**
+     * Delete the item
+     * @param {SyntheticEvent} event - click event
+     */
     delete(event){
         this.props.delete(this.props.id);
     }
 
+    /**
+     * Save the modified text or cancel the operation
+     * @param {SyntheticEvent} event - keydown event
+     */
     saveOrCancel(event){
         if (['Enter', 'Escape', 'Esc'].includes(event.key)){
             this.setState({
@@ -45,6 +61,10 @@ class TodoItem extends React.Component {
         }
     }
 
+    /**
+     * Handle typing to the input
+     * @param {SyntheticEvent} event - change event
+     */
     handleTextChange(event){
         if (event.target.name === 'edit-handler'){
             this.setState({

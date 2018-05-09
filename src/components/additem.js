@@ -12,6 +12,10 @@ class AddItem extends React.Component {
         };
     }
 
+    /**
+     * Set the new item
+     * @param {SyntheticEvent} event - click or keydown event
+     */
     handleSubmit(event){
         if (
             this.state.input !== '' && (
@@ -26,6 +30,10 @@ class AddItem extends React.Component {
         }
     }
 
+    /**
+     * Handle typing to the input
+     * @param {SyntheticEvent} event - change event
+     */
     handleChange(event){
         if (event.target.name === 'add-input'){
             this.setState({

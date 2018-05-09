@@ -1,3 +1,7 @@
+/**
+ * Main component
+ */
+
 import React from 'react';
 
 import TodoItem from './todoitem';
@@ -5,6 +9,10 @@ import AddItem from './additem';
 
 class App extends React.Component {
 
+    /**
+     * Read the state from localStorage or set initial
+     * @param {Object} props
+     */
     constructor(props){
         super(props);
         this.changeItemCompleted = this.changeItemCompleted.bind(this);
@@ -29,10 +37,18 @@ class App extends React.Component {
         };
     }
 
-    componentDidUpdate(prevProps, prevState){
+    /**
+     * Store the state in localStorage
+     */
+    componentDidUpdate(){
         localStorage.setItem('todos', JSON.stringify(this.state.todos));
     }
 
+    /**
+     * Change the completed state of an item
+     * @param {Number|String} id - item identifier
+     * @param {Boolean} completed - completed state
+     */
     changeItemCompleted(id, completed){
         const todoIndex = this.state.todos.findIndex(item => item.id === Number(id));
         const todos = [...this.state.todos];
@@ -40,6 +56,11 @@ class App extends React.Component {
         this.setState({todos});
     }
 
+    /**
+     * Change the text of an item
+     * @param {Number|String} id - item identifier
+     * @param {String} text - item text
+     */
     changeItemText(id, text){
         const todoIndex = this.state.todos.findIndex(item => item.id === Number(id));
         const todos = [...this.state.todos];
@@ -47,6 +68,10 @@ class App extends React.Component {
         this.setState({todos});
     }
 
+    /**
+     * Add new item to the list
+     * @param {String} text - item text
+     */
     addItem(text){
         const maxId = this.state.todos.reduce((acc, curr) => Math.max(acc, curr.id), 0);
         const newTodo = {
@@ -59,6 +84,10 @@ class App extends React.Component {
         }));
     }
 
+    /**
+     * Delete an item from the list
+     * @param {Number|String} id - item identifier
+     */
     deleteItem(id){
         const todos = [...this.state.todos].filter(item => item.id !== Number(id));
         this.setState({todos});
