@@ -1,2 +1,2 @@
-# todolist
+# TODO-list
 ReactJS sample application

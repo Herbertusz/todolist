@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+input {
+    outline-style: none;
+}
+
+#root {
+    margin: 10px auto;
+    width: 600px;
+    background-color: #dddddd;
+}
+
+#root .main {
+    padding: 10px;
+}
+
+#root .main h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+#root .main .list {
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+}
+#root .main .list .item {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-top: 1px solid #aaaaaa;
+}
+#root .main .list .item .text {
+    display: inline-block;
+    width: 75%;
+    overflow: hidden;
+}
+#root .main .list .item .edit-handler {
+    display: inline-block;
+    width: 75%;
+}
+#root .main .list .item .completed {
+    margin: 0 20px 0 10px;
+    vertical-align: top;
+}
+#root .main .list .item .edit {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    height: 20px;
+}
+#root .main .list .item .delete {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+#root .main .list .item .delete:hover {
+    color: red;
+}
+#root .main .add-container {
+    position: relative;
+}
+#root .main .add-container .add-input {
+    box-sizing: border-box;
+    padding: 2px 50px 2px 5px;
+    width: 100%;
+    height: 30px;
+}
+#root .main .add-container .add-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: 30px;
+}
