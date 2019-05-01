@@ -79,3 +79,17 @@ input {
     box-sizing: border-box;
     height: 30px;
 }
+#root .main .filters {
+    padding: 5px;
+    text-align: center;
+}
+#root .main .filters a {
+    display: inline-block;
+    padding: 0 30px;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+}
+#root .main .filters a.active {
+    text-decoration: underline;
+}

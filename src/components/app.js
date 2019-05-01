@@ -4,8 +4,9 @@
 
 import React from 'react';
 
-import TodoItem from './todoitem';
+import TodoList from './todolist';
 import AddItem from './additem';
+import Filters from './filters';
 
 class App extends React.Component {
 
@@ -94,16 +95,12 @@ class App extends React.Component {
     }
 
     render(){
-        const elements = this.state.todos.map(item => (
-            <TodoItem key={item.id} {...item} changeCompleted={this.changeItemCompleted}
-                changeText={this.changeItemText} delete={this.deleteItem} />
-        ));
         return (
             <section className="main">
                 <h1>TODO</h1>
-                <ul className="list">
-                    {elements}
-                </ul>
+                <Filters />
+                <TodoList todos={this.state.todos} deleteItem={this.deleteItem}
+                    changeItemCompleted={this.changeItemCompleted} changeItemText={this.changeItemText} />
                 <AddItem addItem={this.addItem} />
             </section>
         );

@@ -466,6 +466,9 @@
           },
           "continue": {
             "before": true
+          },
+          "as": {
+            "before": true
           }
         }
       }
