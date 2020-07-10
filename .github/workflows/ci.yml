@@ -39,4 +39,5 @@ jobs:
           node -v
           npm -v
           cd ${{ secrets.SERVER_PATH }}
-          git pull
+          git checkout develop
+          git pull --rebase origin
