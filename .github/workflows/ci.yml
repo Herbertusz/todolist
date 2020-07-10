@@ -38,5 +38,5 @@ jobs:
         script: |
           node -v
           npm -v
-          cd ${{ secrets.PROJECT_PATH }}
+          cd ${{ secrets.SERVER_PATH }}
           git pull
