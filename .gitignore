@@ -43,3 +43,4 @@ lib-cov
 #ide
 /.idea/
 /nbproject/
+/.vscode/
